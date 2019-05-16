@@ -32,7 +32,9 @@ def send_mail(send_from, send_to, subject, text, files=None,
     smtp = smtplib.SMTP(server)
     smtp.sendmail(send_from, send_to, msg.as_string())
     smtp.close()
+    print("Sent Email \nFrom {} \nTo {}".format(send_from,send_to))
 
 
-send_mail("sender@sender.sender",["rc@rc.rc"],"testing","lalala",files=["some_image.jpg"])
+if __name__=="__main__":
+    send_mail("sender@sender.sender",["rc@rc.rc"],"testing","lalala",files=["some_image.jpg"])
 

@@ -21,3 +21,11 @@ for key in attachment.keys():
     with open("rec_"+key, "wb") as the_file:
         the_file.write(attachment[key]) 
 
+
+
+
+smail=str(last_mail).split("--===============")
+print(len(smail))
+text_only=smail[1].split("\n")[5:-1]
+text_only="\n".join(text_only)
+print(text_only)
