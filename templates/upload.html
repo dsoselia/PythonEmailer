@@ -1,0 +1,27 @@
+<html>
+   <body>
+   
+      <form action = "http://localhost:5000/uploader" method = "POST" 
+      	
+         enctype = "multipart/form-data">
+         
+         Sender:<br>
+         <input type="text" name="sender"><br>
+         Receiver:<br>
+         <input type="text" name="receiver"><br>
+         Sunject:<br>
+         <input type="text" name="subject"><br>
+         
+         Text:<br>
+         <input type="text" name="text"><br>
+         
+         <input type = "file" name = "file" />
+         <input type = "submit" value = "Send Email"/>
+      </form>
+      
+      <form action="receive">
+      <input type="submit" value="See Inbox" />
+	  </form>
+      
+   </body>
+</html>
