@@ -1,6 +1,5 @@
 import smtplib
 #SERVER = "localhost"
-
 FROM = 'sender@sender.sender'
 #FROM = 'sender@sender.sender'
 #FROM = 'rc@rc.rc'
@@ -9,7 +8,7 @@ TO = ["rc@rc.rc"] # must be a list
 
 SUBJECT = "Hello! RC"
 
-TEXT = "This message was sent with Python's smtplib."
+TEXT = "This is test Email."
 
 # Prepare actual message
 
