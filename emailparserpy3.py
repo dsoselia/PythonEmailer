@@ -70,7 +70,7 @@ class emailparser(object):
         email_recipient_uid = 0
         self.client.select(email_folder_name)
         #result, email_uids = self.client.uid('search', None, "ALL")
-        result, emails_uids = self.client.uid('search', None, '(FROM "%s")' % recipients_email)
+        result, emails_uids = self.client.uid('search', None, '(TO "%s")' % recipients_email)
         if not emails_uids:
             print("No emails with matching recipient email address %s were found" % recipients_email)
             # sys.exit(2)
@@ -89,8 +89,9 @@ class emailparser(object):
     def get_all_emails_by_recipient_name(self, recipients_email, email_folder_name='inbox'):
         self.client.select(email_folder_name)
         # result, email_uids = self.client.uid('search', None, "ALL")
-        result, email_uids = self.client.uid('search', None, '(FROM "%s")' % recipients_email)
+        result, email_uids = self.client.uid('search', None, '(TO "%s")' % recipients_email)
         # print email_uids
+        print(email_uids)
         emails_list = []
         if not email_uids:
             print("No emails with matching recipient email address %s were found" % recipients_email)
@@ -138,7 +139,7 @@ class emailparser(object):
         last_uid_of_email_recipient = ""
         self.client.select(email_folder_name)
         #result, email_uids = self.client.uid('search', None, "ALL")
-        result, email_uids = self.client.uid('search', None, '(FROM "%s")' % recipients_email)
+        result, email_uids = self.client.uid('search', None, '(TO "%s")' % recipients_email)
         if not email_uids:
             print("No emails with matching recipient name %s were found" % recipients_email)
             sys.exit(2)
@@ -150,7 +151,7 @@ class emailparser(object):
         self.client.select(email_folder_name)
         email_uids_list = []
         #result, email_uids = self.client.uid('search', None, "ALL")
-        result, email_uids = self.client.uid('search', None, '(FROM "%s")' % recipients_email)
+        result, email_uids = self.client.uid('search', None, '(TO "%s")' % recipients_email)
         if not email_uids:
             print("No emails with matching recipient name %s were found" % recipients_email)
             sys.exit(2)

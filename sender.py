@@ -2,10 +2,12 @@ import smtplib
 #SERVER = "localhost"
 
 FROM = 'sender@sender.sender'
+#FROM = 'sender@sender.sender'
+#FROM = 'rc@rc.rc'
 
-TO = ["test@test.test"] # must be a list
+TO = ["rc@rc.rc"] # must be a list
 
-SUBJECT = "Hello!"
+SUBJECT = "Hello! RC"
 
 TEXT = "This message was sent with Python's smtplib."
 
@@ -21,6 +23,7 @@ Subject: %s
 
 # Send the mail
 
-server = smtplib.SMTP('127.0.0.1')
+#server = smtplib.SMTP('95.104.92.215',25)
+server = smtplib.SMTP('127.0.0.1',25)
 server.sendmail(FROM, TO, message)
 server.quit()
